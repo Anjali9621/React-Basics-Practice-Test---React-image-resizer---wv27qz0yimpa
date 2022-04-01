@@ -1,12 +1,20 @@
-import React from "react";
-import "../styles/App.css";
+import React, { useState } from "react";
+import "./style.css";
 
-const App = () => {
+export default function App() {
+  let [backgroundColor, setBackgroundColor] = useState("lightblue");
+  const changeBackgroundColor = () => {
+    setBackgroundColor("red");
+  };
   return (
-    <div id="main">
-      <image />
+    <div
+      style={{
+        backgroundColor: backgroundColor,
+        width: "1000px",
+        height: "1000px"
+      }}
+    >
+      <button onClick={changeBackgroundColor}>Change Color</button>
     </div>
   );
-};
-
-export default App;
+}
